@@ -16,11 +16,13 @@ class ThirdActivity : AppCompatActivity() {
         val name = intent.getStringExtra(MainActivity.EXTRA_NAME)
 
         with(binding){
-            val resultIntent = Intent()
-            resultIntent.putExtra(SecondaryActivity.EXTRA_ADDRESS,etInput.text.toString())
-            resultIntent.putExtra(MainActivity.EXTRA_NAME, name)
-            setResult(RESULT_OK, resultIntent)
-            finish()
+            btnGo.setOnClickListener{
+                val resultIntent = Intent()
+                resultIntent.putExtra(SecondaryActivity.EXTRA_ADDRESS,etInput.text.toString())
+                resultIntent.putExtra(MainActivity.EXTRA_NAME, name)
+                setResult(RESULT_OK, resultIntent)
+                finish()
+            }
         }
     }
 }
